@@ -6,5 +6,9 @@ node {
       // ** NOTE: This 'maven-3.5.2' Maven tool must be configured
       // **       in the global configuration.           
       mvnHome = tool 'maven'
-    }    
+    } 
+     stage('Build Project') {
+      // build project via maven
+      sh "'${mvnHome}/bin/mvn' clean install"
+    }	
 } 
